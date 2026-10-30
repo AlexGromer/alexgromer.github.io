@@ -258,6 +258,28 @@
     if (meta) meta.textContent = 'Generated ' + d.generated_at + ' from the public GitHub API.';
   }
 
+  /* Charts, tables and the legend change the height of #stats after the browser has already
+     jumped to a #hash below it. Put the target back once rendering is done, unless the reader
+     has started scrolling by themselves. */
+  var userMoved = false;
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (t) {
+    window.addEventListener(t, function () { userMoved = true; }, { passive: true, once: true });
+  });
+  function realign() {
+    if (userMoved || !location.hash) return;
+    var id = location.hash.slice(1), el, st = document.getElementById('stats');
+    try { id = decodeURIComponent(id); } catch (e) { /* keep the raw id */ }
+    el = document.getElementById(id);
+    if (!el || !st || el === st || !(st.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING)) return;
+    if (st.contains(el)) return;
+    el.scrollIntoView({ behavior: 'instant', block: 'start' });
+  }
+  function settle() {
+    realign();
+    requestAnimationFrame(realign);
+    if (document.readyState !== 'complete') window.addEventListener('load', realign, { once: true });
+  }
+
   var status = document.getElementById('stats-status');
   Promise.all([load('data/stats.json'), load('data/projects.json').catch(function () { return null; })])
     .then(function (res) {
@@ -267,8 +289,10 @@
       if (proj) proj.repos.forEach(function (r) { pitches[r.name] = r.pitch; });
       if (!validate(stats, allowed)) throw new Error('stats.json failed validation');
       mount(stats, pitches);
+      settle();
     })
     .catch(function () {
       if (status) { status.hidden = false; status.textContent = 'Statistics could not be loaded. The numbers are on the GitHub profile.'; }
+      settle();
     });
 })();
