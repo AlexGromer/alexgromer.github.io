@@ -121,7 +121,7 @@ PAGES.append(dict(path="security.html", title="Security policy - Alex Gromer",
 
 <h2>Report privately</h2>
 <ul>
-  <li>Use GitHub's private vulnerability reporting: open the <strong>Security</strong> tab of the affected repository and choose <em>Report a vulnerability</em>. For this site use <a href="{ADV}" rel="noopener">this form</a>.</li>
+  <li>Use GitHub's private vulnerability reporting: open the <strong>Security</strong> tab of the affected repository and choose <em>Report a vulnerability</em>. For this site use <a href="{ADV}" rel="noopener">the private advisory form</a>.</li>
   <li>Please do not open a public issue or pull request for a vulnerability.</li>
   <li>Include the repository, version or commit, steps to reproduce, and the impact you see. Do not include other people's secrets or personal data.</li>
 </ul>

@@ -67,7 +67,6 @@
     };
   }
   function bindTip(node, tip, text) {
-    node.setAttribute('tabindex', '0');
     node.setAttribute('role', 'img');
     node.setAttribute('aria-label', text);
     node.addEventListener('pointerenter', function () { tip.show(node, text); });
@@ -75,6 +74,25 @@
     node.addEventListener('focus', function () { tip.show(node, text); });
     node.addEventListener('blur', function () { tip.hide(); });
     node.addEventListener('keydown', function (e) { if (e.key === 'Escape') tip.hide(); });
+  }
+  /* Roving tabindex: one Tab stop per chart; arrow keys, Home and End move between its points. */
+  function rove(nodes) {
+    nodes.forEach(function (n, i) {
+      n.setAttribute('tabindex', i === 0 ? '0' : '-1');
+      n.addEventListener('focus', function () {
+        nodes.forEach(function (m) { m.setAttribute('tabindex', m === n ? '0' : '-1'); });
+      });
+      n.addEventListener('keydown', function (e) {
+        var to = -1, last = nodes.length - 1;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') to = Math.min(i + 1, last);
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') to = Math.max(i - 1, 0);
+        else if (e.key === 'Home') to = 0;
+        else if (e.key === 'End') to = last;
+        if (to < 0) return;
+        e.preventDefault();
+        nodes[to].focus();
+      });
+    });
   }
   function frame(body, w, hgt, title, desc) {
     var id = 'c' + (++uid);
@@ -84,21 +102,43 @@
     return s;
   }
 
+  /* Segment widths that sum to exactly `avail`: tiny shares get MIN px, the others are scaled down. */
+  function segWidths(bytes, avail, min) {
+    var total = bytes.reduce(function (a, b) { return a + b; }, 0) || 1;
+    var fixed = bytes.map(function () { return false; });
+    var out = bytes.map(function (b) { return avail * b / total; });
+    if (avail < min * bytes.length) return bytes.map(function () { return avail / bytes.length; });
+    for (var pass = 0; pass < bytes.length; pass++) {
+      var nFixed = fixed.filter(Boolean).length, freeBytes = 0, changed = false;
+      bytes.forEach(function (b, i) { if (!fixed[i]) freeBytes += b; });
+      var room = avail - nFixed * min;
+      bytes.forEach(function (b, i) {
+        if (fixed[i]) { out[i] = min; return; }
+        out[i] = freeBytes ? room * b / freeBytes : room / (bytes.length - nFixed);
+      });
+      out.forEach(function (x, i) { if (!fixed[i] && x < min) { fixed[i] = true; out[i] = min; changed = true; } });
+      if (!changed) break;
+    }
+    return out;
+  }
+
   function drawLangs(body, d, w) {
     var gap = 3, hgt = 44, n = d.languages.length;
     var avail = w - gap * (n - 1);
     var idx = langIndex(d);
-    var total = d.languages.reduce(function (a, l) { return a + l.bytes; }, 0) || 1;
+    var widths = segWidths(d.languages.map(function (l) { return l.bytes; }), avail, 4);
     var s = frame(body, w, hgt, 'Languages by bytes',
       d.languages.map(function (l) { return l.name + ' ' + l.percent + '%'; }).join(', '));
-    var tip = Tip(body), x = 0;
+    var tip = Tip(body), x = 0, nodes = [];
     d.languages.forEach(function (l, i) {
-      var sw = Math.max(4, avail * l.bytes / total);
+      var sw = widths[i];
       var r = svgEl('rect', { x: x.toFixed(1), y: 0, width: sw.toFixed(1), height: hgt, rx: 6, 'class': 'seg sw-' + idx[l.name] }, s);
       r.style.setProperty('--i', String(i));
       bindTip(r, tip, l.name + ': ' + l.percent + '% (' + kib(l.bytes) + ' KiB)');
+      nodes.push(r);
       x += sw + gap;
     });
+    rove(nodes);
     body.insertBefore(s, body.firstChild);
   }
 
@@ -112,7 +152,7 @@
     var total = data.reduce(function (a, c) { return a + c.count; }, 0);
     var s = frame(body, w, hgt, 'Commits per month, last 12 months',
       total + ' commits in 12 months; peak ' + max + ' in ' + data.filter(function (c) { return c.count === max; })[0].month);
-    var tip = Tip(body);
+    var tip = Tip(body), nodes = [];
     [0, 0.5, 1].forEach(function (f) {
       var y = padT + ph - ph * f;
       svgEl('line', { x1: padL, x2: w, y1: y, y2: y, 'class': 'grid' }, s);
@@ -120,16 +160,18 @@
     });
     var mon = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     data.forEach(function (c, i) {
-      var bh = ph * c.count / top, x = padL + slot * i + (slot - bw) / 2, y = padT + ph - bh;
+      var bh = Math.max(ph * c.count / top, 1), x = padL + slot * i + (slot - bw) / 2, y = padT + ph - bh;  /* 1px baseline for zero months, so the point can show focus */
       var m = parseInt(c.month.slice(5), 10);
-      var r = svgEl('rect', { x: x.toFixed(1), y: y.toFixed(1), width: bw.toFixed(1), height: Math.max(bh, 0).toFixed(1), rx: 4, 'class': 'bar' }, s);
+      var r = svgEl('rect', { x: x.toFixed(1), y: y.toFixed(1), width: bw.toFixed(1), height: bh.toFixed(1), rx: 4, 'class': 'bar' }, s);
       r.style.setProperty('--i', String(i));
       bindTip(r, tip, c.month + ': ' + c.count + (c.count === 1 ? ' commit' : ' commits'));
+      nodes.push(r);
       var cx = x + bw / 2;
       if (c.count > 0 && slot >= 26) svgEl('text', { x: cx, y: y - 5, 'text-anchor': 'middle', 'class': 'val' }, s).textContent = String(c.count);
       svgEl('text', { x: cx, y: hgt - padB + 16, 'text-anchor': 'middle' }, s).textContent = mon[m - 1];
       if (i === 0 || m === 1) svgEl('text', { x: cx, y: hgt - padB + 30, 'text-anchor': 'middle', 'class': 'axis-label' }, s).textContent = c.month.slice(0, 4);
     });
+    rove(nodes);
     body.insertBefore(s, body.firstChild);
   }
 
@@ -153,7 +195,7 @@
     var hgt = 230, axisY = 190, padL = 30, padR = 110, n = repos.length;
     var s = frame(body, w, hgt, 'Repositories by creation date',
       n + ' repositories from ' + repos[0].created + ' to ' + repos[n - 1].created + '; dot size grows with stars');
-    var tip = Tip(body);
+    var tip = Tip(body), nodes = [];
     svgEl('line', { x1: padL - 10, x2: w - padR + 40, y1: axisY, y2: axisY, 'class': 'axis-line' }, s);
     var sp = (w - padL - padR) / Math.max(1, n - 1);
     repos.forEach(function (r, i) {
@@ -165,19 +207,30 @@
       var c = svgEl('circle', { cx: x.toFixed(1), cy: axisY, r: rad.toFixed(1), 'class': 'pt' }, s);
       var info = r.name + ', created ' + r.created + ', ' + (r.language || 'no detected language') + ', ' + r.stars + (r.stars === 1 ? ' star' : ' stars');
       bindTip(c, tip, pitches[r.name] ? info + '. ' + pitches[r.name] : info);
+      nodes.push(c);
       var t = svgEl('text', { x: x + 4, y: axisY - rad - 8, transform: 'rotate(-45 ' + (x + 4) + ' ' + (axisY - rad - 8) + ')', 'text-anchor': 'start' }, s);
       t.textContent = clip(r.name, 24);
       svgEl('text', { x: x, y: axisY + 28, 'text-anchor': 'middle', 'class': 'axis-label' }, s).textContent = r.created.slice(0, 7);
     });
+    rove(nodes);
     body.insertBefore(s, body.firstChild);
   }
 
+  /* Same-origin inline icons: symbols live in the sprite at the top of index.html. */
+  var ICONS = { Go: 'go', Rust: 'rust', C: 'c', Shell: 'bash', Python: 'python', TypeScript: 'ts' };
+  function icon(name) {
+    var id = ICONS[name], hasSym = id && document.getElementById('i-' + id);
+    var s = svgEl('svg', { 'class': 'lang-ico', 'aria-hidden': 'true', viewBox: '0 0 24 24' });
+    if (hasSym) svgEl('use', { href: '#i-' + id }, s);
+    return s;
+  }
   function fillLegend(ul, d) {
     var idx = langIndex(d);
     ul.textContent = '';
     d.languages.forEach(function (l) {
       var li = h('li');
       li.appendChild(h('span', 'swatch sw-' + idx[l.name]));
+      li.appendChild(icon(l.name));
       li.appendChild(h('span', null, l.name));
       li.appendChild(h('span', 'num', l.percent + '% · ' + kib(l.bytes) + ' KiB'));
       ul.appendChild(li);
@@ -207,6 +260,8 @@
       var v = d.kpi[n.getAttribute('data-kpi')];
       if (typeof v === 'number') n.textContent = fmt(v);
     });
+    var lab = document.querySelector('[data-kpi-label="languages"]');
+    if (lab) lab.textContent = 'Languages (' + d.languages.length + ' shown)';
   }
   function fillRepoBits(d) {
     var idx = langIndex(d);
