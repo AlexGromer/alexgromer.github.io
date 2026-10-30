@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rclone-colab</title>
+<meta name="description" content="rclone-colab: a personal OAuth application by Alex Gromer that lets the owner's rclone synchronise one Google Drive folder with compute sessions the owner starts.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>rclone-colab</h1>
+<p class="muted">A personal, single-user application by <a href="index.html">Alex Gromer</a>.</p>
+<nav><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="index.html">Home</a></nav>
+
+<h2>What rclone-colab does</h2>
+<p>rclone-colab is an OAuth client for Google Drive used by one person: the developer. It lets the developer's own copy of
+<a href="https://rclone.org/">rclone</a>, running inside a Google Colab runtime or on the developer's workstation, read and
+write files in the developer's own Google Drive folder. Its only job is to keep model evaluation runs, checkpoints and logs
+in that folder without granting Drive access by hand every time a compute session starts.</p>
+
+<h2>Who can use it</h2>
+<p>Only the developer's Google account. The application is not offered, sold or distributed to anyone else.</p>
+
+<h2>Data it accesses</h2>
+<ul>
+  <li>Files in the authorising account's Google Drive, under the <code>https://www.googleapis.com/auth/drive</code> scope,
+  on the developer's instruction and within one folder the developer chooses.</li>
+  <li>OAuth tokens issued by Google, stored only in the developer's own password manager and Colab Secrets.</li>
+</ul>
+<p>No data is shared with third parties, used for advertising, or used to train models.
+Details: <a href="privacy.html">privacy policy</a> · <a href="terms.html">terms of service</a>.</p>
+
+<h2>Revoking access</h2>
+<p>At any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
+
+<footer><a href="index.html">Alex Gromer</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></footer>
+</main>
+</body>
+</html>
