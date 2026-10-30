@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security policy - Alex Gromer</title>
+<meta name="description" content="How to report a vulnerability in Alex Gromer's repositories or site: scope, private advisories, response targets, safe harbour.">
+<link rel="canonical" href="https://alexgromer.github.io/security.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alex Gromer">
+<meta property="og:title" content="Security policy - Alex Gromer">
+<meta property="og:description" content="How to report a vulnerability in Alex Gromer's repositories or site: scope, private advisories, response targets, safe harbour.">
+<meta property="og:url" content="https://alexgromer.github.io/security.html">
+<meta property="og:image" content="https://alexgromer.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alex Gromer: circuit traces and a gear on a dark blue background">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1b2d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/theme.js"></script>
+<script src="js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/favicon.svg" alt="" width="32" height="32"><span>Alex Gromer</span></a>
+    <nav class="nav-wide" aria-label="Sections">
+        <a href="index.html#about">About</a>
+        <a href="index.html#principles">Principles</a>
+        <a href="index.html#stats">Stats</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#oss">Open source</a>
+        <a href="index.html#lab">Lab</a>
+        <a href="index.html#policies">Policies</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <details class="nav-narrow">
+      <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary>
+      <nav class="menu" aria-label="Sections, menu">
+          <a href="index.html#about">About</a>
+          <a href="index.html#principles">Principles</a>
+          <a href="index.html#stats">Stats</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#oss">Open source</a>
+          <a href="index.html#lab">Lab</a>
+          <a href="index.html#policies">Policies</a>
+          <a href="index.html#contact">Contact</a>
+      </nav>
+    </details>
+    <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-pressed="false" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4 8 8 0 1 0 20 14.500z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<article class="doc">
+<a class="back" href="index.html#policies">&larr; All policies</a>
+<h1>Security policy</h1>
+<p class="updated">Last updated <time datetime="2026-10-30">30 October 2026</time></p>
+<p>I take reports seriously and handle them as a person with a day job would: promptly when I can, openly about the limits. This policy covers every repository owned by <a href="https://github.com/AlexGromer" rel="noopener">AlexGromer</a> that is not a fork, and this website. For a fork, report to the upstream project.</p>
+
+<h2>Report privately</h2>
+<ul>
+  <li>Use GitHub's private vulnerability reporting: open the <strong>Security</strong> tab of the affected repository and choose <em>Report a vulnerability</em>. For this site use <a href="https://github.com/AlexGromer/alexgromer.github.io/security/advisories/new" rel="noopener">this form</a>.</li>
+  <li>Please do not open a public issue or pull request for a vulnerability.</li>
+  <li>Include the repository, version or commit, steps to reproduce, and the impact you see. Do not include other people's secrets or personal data.</li>
+</ul>
+<p>A machine-readable copy of this is in <a href="/.well-known/security.txt">/.well-known/security.txt</a>.</p>
+
+<h2>What to expect</h2>
+<p>These are targets for personal projects, not a service-level agreement.</p>
+<ul>
+  <li>Acknowledgement within 7 days.</li>
+  <li>First assessment within 14 days: confirmed, not reproducible, or out of scope.</li>
+  <li>A fix or a mitigation plan within 90 days. Coordinated disclosure: I publish an advisory once a fix is out, or after 90 days, whichever comes first, and I will agree a date with you if more time is needed.</li>
+  <li>Credit in the advisory if you want it.</li>
+</ul>
+
+<h2>Supported versions</h2>
+<p>The latest release, or the default branch where there are no releases. See <a href="support.html">support and maintenance</a>.</p>
+
+<h2>No bounty</h2>
+<p>I do not run a bounty programme and cannot pay for reports. I can say thanks in public.</p>
+
+<h2>Scope</h2>
+<ul>
+  <li>In scope: the code, scripts, workflows and published releases in my non-fork repositories, and this website.</li>
+  <li>Out of scope: my home network and servers (do not probe them), social engineering, denial of service, findings in third-party platforms such as GitHub itself, and reports about a dependency without a demonstrated effect on the project.</li>
+</ul>
+
+<h2>Safe harbour</h2>
+<p>If you act in good faith, stay inside the scope above, avoid privacy violations, data destruction and service disruption, and give me reasonable time to fix the problem before you disclose it, I will not take legal action against you or report you for the research. I can only speak for myself, not for GitHub or other third parties.</p>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="links">
+      <li><a href="security.html">Security</a></li>
+      <li><a href="contributing.html">Contributing</a></li>
+      <li><a href="conduct.html">Conduct</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="licence.html">Licence</a></li>
+      <li><a href="privacy-site.html">Site privacy</a></li>
+      <li><a href="rclone-colab.html">rclone-colab</a></li>
+      <li><a href="privacy.html">rclone-colab privacy</a></li>
+      <li><a href="terms.html">rclone-colab terms</a></li>
+    </ul>
+    <p>&copy; 2026 Alex Gromer. Site source under the <a href="licence.html">MIT licence</a>. <a href="https://github.com/AlexGromer/alexgromer.github.io" rel="noopener">Source on GitHub</a>.</p>
+    <p class="note">No analytics. No cookies. Static files.</p>
+  </div>
+</footer>
+</body>
+</html>

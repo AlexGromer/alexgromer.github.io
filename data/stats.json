@@ -1,0 +1,188 @@
+{
+  "commits_by_month": [
+    {
+      "count": 0,
+      "month": "2025-11"
+    },
+    {
+      "count": 0,
+      "month": "2025-12"
+    },
+    {
+      "count": 50,
+      "month": "2026-01"
+    },
+    {
+      "count": 35,
+      "month": "2026-02"
+    },
+    {
+      "count": 33,
+      "month": "2026-03"
+    },
+    {
+      "count": 3,
+      "month": "2026-04"
+    },
+    {
+      "count": 0,
+      "month": "2026-05"
+    },
+    {
+      "count": 142,
+      "month": "2026-06"
+    },
+    {
+      "count": 368,
+      "month": "2026-07"
+    },
+    {
+      "count": 160,
+      "month": "2026-08"
+    },
+    {
+      "count": 38,
+      "month": "2026-09"
+    },
+    {
+      "count": 7,
+      "month": "2026-10"
+    }
+  ],
+  "generated_at": "2026-10-30",
+  "kpi": {
+    "languages": 11,
+    "merged_prs": 4,
+    "repos": 12,
+    "stars": 5
+  },
+  "languages": [
+    {
+      "bytes": 5709257,
+      "name": "Go",
+      "percent": 41.0
+    },
+    {
+      "bytes": 5114602,
+      "name": "Python",
+      "percent": 36.7
+    },
+    {
+      "bytes": 2108022,
+      "name": "Shell",
+      "percent": 15.1
+    },
+    {
+      "bytes": 478191,
+      "name": "JavaScript",
+      "percent": 3.4
+    },
+    {
+      "bytes": 451281,
+      "name": "TypeScript",
+      "percent": 3.2
+    },
+    {
+      "bytes": 35367,
+      "name": "HTML",
+      "percent": 0.3
+    },
+    {
+      "bytes": 14706,
+      "name": "Dockerfile",
+      "percent": 0.1
+    },
+    {
+      "bytes": 16613,
+      "name": "Other",
+      "percent": 0.1
+    }
+  ],
+  "login": "AlexGromer",
+  "repos": [
+    {
+      "created": "2021-06-25",
+      "language": "",
+      "name": "elasticsearch-analysis-morphology-prebuilt-plugin",
+      "pushed": "2021-06-25",
+      "stars": 0
+    },
+    {
+      "created": "2026-01-22",
+      "language": "Shell",
+      "name": "ssh-yaml-validator",
+      "pushed": "2026-01-30",
+      "stars": 0
+    },
+    {
+      "created": "2026-01-25",
+      "language": "Shell",
+      "name": "jwt-parser",
+      "pushed": "2026-01-25",
+      "stars": 0
+    },
+    {
+      "created": "2026-01-29",
+      "language": "Shell",
+      "name": "keycloak-migration",
+      "pushed": "2026-08-11",
+      "stars": 1
+    },
+    {
+      "created": "2026-02-19",
+      "language": "Go",
+      "name": "deckhouse-helm-generator",
+      "pushed": "2026-10-26",
+      "stars": 0
+    },
+    {
+      "created": "2026-04-04",
+      "language": "JavaScript",
+      "name": "ACEV-Framework",
+      "pushed": "2026-04-04",
+      "stars": 0
+    },
+    {
+      "created": "2026-06-25",
+      "language": "Python",
+      "name": "claude-code-operator-framework",
+      "pushed": "2026-06-25",
+      "stars": 0
+    },
+    {
+      "created": "2026-06-25",
+      "language": "Python",
+      "name": "rlm",
+      "pushed": "2026-07-20",
+      "stars": 0
+    },
+    {
+      "created": "2026-06-25",
+      "language": "Python",
+      "name": "sentinel",
+      "pushed": "2026-10-30",
+      "stars": 4
+    },
+    {
+      "created": "2026-06-28",
+      "language": "Shell",
+      "name": "uka-runner-bootstrap",
+      "pushed": "2026-06-28",
+      "stars": 0
+    },
+    {
+      "created": "2026-10-27",
+      "language": "",
+      "name": "dead-code-checker",
+      "pushed": "2026-10-27",
+      "stars": 0
+    },
+    {
+      "created": "2026-10-29",
+      "language": "TypeScript",
+      "name": "vot-local",
+      "pushed": "2026-10-30",
+      "stars": 0
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Contact: https://github.com/AlexGromer/alexgromer.github.io/security/advisories/new
+Expires: 2027-10-30T00:00:00.000Z
+Preferred-Languages: en, ru
+Canonical: https://alexgromer.github.io/.well-known/security.txt
+Policy: https://alexgromer.github.io/security.html

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support and maintenance - Alex Gromer</title>
+<meta name="description" content="Maintenance and support policy for Alex Gromer's repositories: best effort, no SLA, supported versions, deprecation notice, archived repositories.">
+<link rel="canonical" href="https://alexgromer.github.io/support.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alex Gromer">
+<meta property="og:title" content="Support and maintenance - Alex Gromer">
+<meta property="og:description" content="Maintenance and support policy for Alex Gromer's repositories: best effort, no SLA, supported versions, deprecation notice, archived repositories.">
+<meta property="og:url" content="https://alexgromer.github.io/support.html">
+<meta property="og:image" content="https://alexgromer.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alex Gromer: circuit traces and a gear on a dark blue background">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1b2d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/theme.js"></script>
+<script src="js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/favicon.svg" alt="" width="32" height="32"><span>Alex Gromer</span></a>
+    <nav class="nav-wide" aria-label="Sections">
+        <a href="index.html#about">About</a>
+        <a href="index.html#principles">Principles</a>
+        <a href="index.html#stats">Stats</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#oss">Open source</a>
+        <a href="index.html#lab">Lab</a>
+        <a href="index.html#policies">Policies</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <details class="nav-narrow">
+      <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary>
+      <nav class="menu" aria-label="Sections, menu">
+          <a href="index.html#about">About</a>
+          <a href="index.html#principles">Principles</a>
+          <a href="index.html#stats">Stats</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#oss">Open source</a>
+          <a href="index.html#lab">Lab</a>
+          <a href="index.html#policies">Policies</a>
+          <a href="index.html#contact">Contact</a>
+      </nav>
+    </details>
+    <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-pressed="false" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4 8 8 0 1 0 20 14.500z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<article class="doc">
+<a class="back" href="index.html#policies">&larr; All policies</a>
+<h1>Support and maintenance</h1>
+<p class="updated">Last updated <time datetime="2026-10-30">30 October 2026</time></p>
+<p>My repositories are personal projects that I publish because they may be useful to someone else. This page says what you can and cannot expect.</p>
+
+<h2>Best effort, no SLA</h2>
+<p>I answer issues and pull requests when I can. There is no response-time guarantee, no commercial support and no promise that a feature request will be accepted. If you depend on a project, pin a version and be ready to fork.</p>
+
+<h2>What is supported</h2>
+<ul>
+  <li>The latest release, or the default branch where a repository has no releases.</li>
+  <li>Older versions are not patched. Upgrade first, then report the problem again if it persists.</li>
+  <li>Security fixes follow the <a href="security.html">security policy</a>.</li>
+</ul>
+
+<h2>Reporting a bug</h2>
+<p>Open an issue in the repository with the version or commit, what you did, what you expected and what happened. A minimal reproduction is worth more than a long description. Changes you want to make yourself: see <a href="contributing.html">contributing</a>.</p>
+
+<h2>Status of a repository</h2>
+<ul>
+  <li><strong>Active</strong>: developed and answered regularly.</li>
+  <li><strong>Maintenance</strong>: fixes and security updates only.</li>
+  <li><strong>Archived</strong>: read-only on GitHub, not maintained, no fixes of any kind. You may fork it under its licence.</li>
+</ul>
+<p>The status is stated in the repository's README when it is not Active.</p>
+
+<h2>Deprecation notice</h2>
+<p>When I plan to remove a feature or retire a project I announce it in the README and the release notes at least 30 days before the change where that is possible, and name the replacement if there is one.</p>
+
+<h2>rclone-colab</h2>
+<p><a href="rclone-colab.html">rclone-colab</a> is a single-user application for my own account. It is not offered to anyone else and has no support.</p>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="links">
+      <li><a href="security.html">Security</a></li>
+      <li><a href="contributing.html">Contributing</a></li>
+      <li><a href="conduct.html">Conduct</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="licence.html">Licence</a></li>
+      <li><a href="privacy-site.html">Site privacy</a></li>
+      <li><a href="rclone-colab.html">rclone-colab</a></li>
+      <li><a href="privacy.html">rclone-colab privacy</a></li>
+      <li><a href="terms.html">rclone-colab terms</a></li>
+    </ul>
+    <p>&copy; 2026 Alex Gromer. Site source under the <a href="licence.html">MIT licence</a>. <a href="https://github.com/AlexGromer/alexgromer.github.io" rel="noopener">Source on GitHub</a>.</p>
+    <p class="note">No analytics. No cookies. Static files.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Alex Gromer: systems architect, DevOps/SRE, security engineering, AI tooling">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1b2d"/><stop offset="1" stop-color="#1c3550"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g fill="none" stroke="#3f7cac" stroke-width="4" opacity="0.55">
+    <path d="M0 110 H300 L340 150 H460"/>
+    <path d="M1200 70 H1000 L960 110 V160"/>
+    <path d="M0 560 H200 L240 520 H460"/>
+    <path d="M620 0 V80 L660 120 H760"/>
+  </g>
+  <g fill="#5fb3ff"><circle cx="460" cy="150" r="8"/><circle cx="460" cy="520" r="8"/><circle cx="760" cy="120" r="8"/><circle cx="0" cy="110" r="8"/></g>
+  <g fill="#1c3550" stroke="#3f7cac" stroke-width="3" fill-rule="evenodd" opacity="0.9"><path d="M1116.8 310.2 L1149.5 316.4 L1149.5 343.6 L1116.8 349.8 L1109.8 380.2 L1136.7 399.9 L1124.8 424.5 L1092.6 415.9 L1073.2 440.2 L1088.8 469.7 L1067.5 486.7 L1042.3 464.9 L1014.2 478.4 L1015.5 511.7 L988.9 517.8 L975.6 487.2 L944.4 487.2 L931.1 517.8 L904.5 511.7 L905.8 478.4 L877.7 464.9 L852.5 486.7 L831.2 469.7 L846.8 440.2 L827.4 415.9 L795.2 424.5 L783.3 399.9 L810.2 380.2 L803.2 349.8 L770.5 343.6 L770.5 316.4 L803.2 310.2 L810.2 279.8 L783.3 260.1 L795.2 235.5 L827.4 244.1 L846.8 219.8 L831.2 190.3 L852.5 173.3 L877.7 195.1 L905.8 181.6 L904.5 148.3 L931.1 142.2 L944.4 172.8 L975.6 172.8 L988.9 142.2 L1015.5 148.3 L1014.2 181.6 L1042.3 195.1 L1067.5 173.3 L1088.8 190.3 L1073.2 219.8 L1092.6 244.1 L1124.8 235.5 L1136.7 260.1 L1109.8 279.8Z M900.0 330.0 a60 60 0 1 0 120 0 a60 60 0 1 0 -120 0Z"/><path d="M877.8 500.4 L904.1 505.6 L904.1 534.4 L877.8 539.6 L866.0 568.2 L880.9 590.5 L860.5 610.9 L838.2 596.0 L809.6 607.8 L804.4 634.1 L775.6 634.1 L770.4 607.8 L741.8 596.0 L719.5 610.9 L699.1 590.5 L714.0 568.2 L702.2 539.6 L675.9 534.4 L675.9 505.6 L702.2 500.4 L714.0 471.8 L699.1 449.5 L719.5 429.1 L741.8 444.0 L770.4 432.2 L775.6 405.9 L804.4 405.9 L809.6 432.2 L838.2 444.0 L860.5 429.1 L880.9 449.5 L866.0 471.8Z M756.0 520.0 a34 34 0 1 0 68 0 a34 34 0 1 0 -68 0Z"/></g>
+  <text x="72" y="270" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-weight="700" font-size="96" fill="#ffffff">Alex Gromer</text>
+  <text x="72" y="340" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="32" fill="#d9e2ec">Systems architect, DevOps/SRE,</text>
+  <text x="72" y="382" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="32" fill="#d9e2ec">security engineering, AI tooling</text>
+  <text x="72" y="448" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="26" fill="#9fb3c8">Infrastructure that stays up, and tooling</text>
+  <text x="72" y="484" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="26" fill="#9fb3c8">that keeps engineers honest.</text>
+  <text x="72" y="568" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="28" fill="#5fb3ff">alexgromer.github.io</text>
+</svg>

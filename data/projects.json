@@ -1,0 +1,23 @@
+{
+  "login": "AlexGromer",
+  "repos": [
+    {"name": "sentinel", "featured": true, "pitch": "Self-healing UI-testing agent: explores a web app, freezes a replayable plan, repairs locators on DOM drift."},
+    {"name": "deckhouse-helm-generator", "featured": true, "pitch": "Turns live Kubernetes resources into Helm charts, with relationship detection for CRDs, Prometheus Operator, Gateway API, KEDA, cert-manager and Argo Rollouts."},
+    {"name": "keycloak-migration", "featured": true, "pitch": "Multi-DBMS, multi-deployment Keycloak migration framework: auto-discovery, atomic checkpoints, air-gap support."},
+    {"name": "jwt-parser", "featured": true, "pitch": "JWT parser with zero dependencies for closed networks; 131 tests. Bash and Go."},
+    {"name": "ssh-yaml-validator", "featured": true, "pitch": "YAML validator for air-gapped hosts. Pure Bash."},
+    {"name": "claude-code-operator-framework", "featured": false, "pitch": "Model-agnostic Claude Code configuration: output styles, rules, agents, hooks, MCP servers."},
+    {"name": "dead-code-checker", "featured": false, "pitch": "Dead-code detection with a public-API mode and an LLM second opinion."},
+    {"name": "vot-local", "featured": false, "pitch": "Voice-over translation of local video files into a dubbed .mkv."},
+    {"name": "rlm", "featured": false, "pitch": "Recursive Language Model methods."},
+    {"name": "ACEV-Framework", "featured": false, "pitch": "Knowledge-base framework (Second Brain and Zettelkasten)."},
+    {"name": "uka-runner-bootstrap", "featured": false, "pitch": "Bootstrap of a self-hosted GitHub Actions runner in WSL2; no secrets, the registration token is passed at runtime."},
+    {"name": "elasticsearch-analysis-morphology-prebuilt-plugin", "featured": false, "pitch": "Prebuilt morphology analysis plugin for Elasticsearch."}
+  ],
+  "merged_prs": [
+    {"repo": "FOSWLY/vot.js", "number": 143},
+    {"repo": "FOSWLY/vot.js", "number": 144},
+    {"repo": "ilyhalight/voice-over-translation", "number": 1894},
+    {"repo": "ilyhalight/voice-over-translation", "number": 1881}
+  ]
+}

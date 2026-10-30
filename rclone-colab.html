@@ -1,23 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>rclone-colab</title>
 <meta name="description" content="rclone-colab: a personal OAuth application by Alex Gromer that lets the owner's rclone synchronise one Google Drive folder with compute sessions the owner starts.">
-<link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://alexgromer.github.io/rclone-colab.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alex Gromer">
+<meta property="og:title" content="rclone-colab">
+<meta property="og:description" content="rclone-colab: a personal OAuth application by Alex Gromer that lets the owner's rclone synchronise one Google Drive folder with compute sessions the owner starts.">
+<meta property="og:url" content="https://alexgromer.github.io/rclone-colab.html">
+<meta property="og:image" content="https://alexgromer.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alex Gromer: circuit traces and a gear on a dark blue background">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1b2d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/theme.js"></script>
+<script src="js/site.js" defer></script>
 </head>
 <body>
-<main>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/favicon.svg" alt="" width="32" height="32"><span>Alex Gromer</span></a>
+    <nav class="nav-wide" aria-label="Sections">
+        <a href="index.html#about">About</a>
+        <a href="index.html#principles">Principles</a>
+        <a href="index.html#stats">Stats</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#oss">Open source</a>
+        <a href="index.html#lab">Lab</a>
+        <a href="index.html#policies">Policies</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <details class="nav-narrow">
+      <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary>
+      <nav class="menu" aria-label="Sections, menu">
+          <a href="index.html#about">About</a>
+          <a href="index.html#principles">Principles</a>
+          <a href="index.html#stats">Stats</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#oss">Open source</a>
+          <a href="index.html#lab">Lab</a>
+          <a href="index.html#policies">Policies</a>
+          <a href="index.html#contact">Contact</a>
+      </nav>
+    </details>
+    <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-pressed="false" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4 8 8 0 1 0 20 14.500z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
+  </div>
+</header>
+<main id="main">
+<article class="doc">
+<a class="back" href="index.html#policies">&larr; All policies</a>
 <h1>rclone-colab</h1>
-<p class="muted">A personal, single-user application by <a href="index.html">Alex Gromer</a>.</p>
-<nav><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="index.html">Home</a></nav>
+<p class="updated">A personal, single-user application by <a href="index.html">Alex Gromer</a>.</p>
 
 <h2>What rclone-colab does</h2>
 <p>rclone-colab is an OAuth client for Google Drive used by one person: the developer. It lets the developer's own copy of
-<a href="https://rclone.org/">rclone</a>, running inside a Google Colab runtime or on the developer's workstation, read and
+<a href="https://rclone.org/" rel="noopener">rclone</a>, running inside a Google Colab runtime or on the developer's workstation, read and
 write files in the developer's own Google Drive folder. Its only job is to keep model evaluation runs, checkpoints and logs
 in that folder without granting Drive access by hand every time a compute session starts.</p>
+<ul>
+  <li>Purpose: synchronise one Google Drive folder of the account owner with compute sessions the owner starts.</li>
+  <li>Users: the account owner only. The application is not offered to third parties.</li>
+  <li>Data: files in the owner's Google Drive, accessed under the <code>drive</code> scope, on the owner's instruction.</li>
+</ul>
 
 <h2>Who can use it</h2>
 <p>Only the developer's Google account. The application is not offered, sold or distributed to anyone else.</p>
@@ -29,12 +83,28 @@ in that folder without granting Drive access by hand every time a compute sessio
   <li>OAuth tokens issued by Google, stored only in the developer's own password manager and Colab Secrets.</li>
 </ul>
 <p>No data is shared with third parties, used for advertising, or used to train models.
-Details: <a href="privacy.html">privacy policy</a> · <a href="terms.html">terms of service</a>.</p>
+Details: <a href="privacy.html">privacy policy</a> and <a href="terms.html">terms of service</a>.</p>
 
 <h2>Revoking access</h2>
-<p>At any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p>
-
-<footer><a href="index.html">Alex Gromer</a> · <a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></footer>
+<p>At any time at <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.</p>
+</article>
 </main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="links">
+      <li><a href="security.html">Security</a></li>
+      <li><a href="contributing.html">Contributing</a></li>
+      <li><a href="conduct.html">Conduct</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="licence.html">Licence</a></li>
+      <li><a href="privacy-site.html">Site privacy</a></li>
+      <li><a href="rclone-colab.html">rclone-colab</a></li>
+      <li><a href="privacy.html">rclone-colab privacy</a></li>
+      <li><a href="terms.html">rclone-colab terms</a></li>
+    </ul>
+    <p>&copy; 2026 Alex Gromer. Site source under the <a href="licence.html">MIT licence</a>. <a href="https://github.com/AlexGromer/alexgromer.github.io" rel="noopener">Source on GitHub</a>.</p>
+    <p class="note">No analytics. No cookies. Static files.</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1b2d"/>
+      <stop offset="1" stop-color="#1c3550"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9e2ec"/>
+      <stop offset="1" stop-color="#8fa3b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- circuit traces -->
+  <g stroke="#3f7cac" stroke-width="4" fill="none" opacity="0.55">
+    <path d="M40 120 H120 L150 150 V210"/>
+    <path d="M472 392 H392 L362 362 V302"/>
+    <path d="M60 420 H140 L170 390"/>
+    <path d="M452 92 H372 L342 122"/>
+    <path d="M256 30 V70"/>
+    <path d="M256 482 V442"/>
+  </g>
+  <g fill="#5fb3ff">
+    <circle cx="40" cy="120" r="7"/><circle cx="150" cy="210" r="7"/>
+    <circle cx="472" cy="392" r="7"/><circle cx="362" cy="302" r="7"/>
+    <circle cx="60" cy="420" r="7"/><circle cx="452" cy="92" r="7"/>
+    <circle cx="256" cy="30" r="7"/><circle cx="256" cy="482" r="7"/>
+  </g>
+  <!-- gear: 12 teeth -->
+  <g transform="translate(256 256)" fill="url(#metal)" stroke="#0b1220" stroke-width="3">
+    <g id="tooth">
+      <rect x="-22" y="-176" width="44" height="52" rx="8"/>
+    </g>
+    <use href="#tooth" transform="rotate(30)"/><use href="#tooth" transform="rotate(60)"/>
+    <use href="#tooth" transform="rotate(90)"/><use href="#tooth" transform="rotate(120)"/>
+    <use href="#tooth" transform="rotate(150)"/><use href="#tooth" transform="rotate(180)"/>
+    <use href="#tooth" transform="rotate(210)"/><use href="#tooth" transform="rotate(240)"/>
+    <use href="#tooth" transform="rotate(270)"/><use href="#tooth" transform="rotate(300)"/>
+    <use href="#tooth" transform="rotate(330)"/>
+    <circle r="150"/>
+    <circle r="112" fill="#0f1b2d"/>
+  </g>
+  <!-- monogram -->
+  <text x="256" y="292" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="118" font-weight="bold" fill="#e8f1fa" letter-spacing="-6">AG</text>
+  <!-- dash: hint of a bracket / prompt -->
+  <text x="256" y="356" text-anchor="middle" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="34" fill="#5fb3ff">&gt;_</text>
+</svg>

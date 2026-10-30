@@ -1,36 +1,400 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alex Gromer</title>
-<meta name="description" content="Alex Gromer: systems architect, DevOps/SRE. Projects and the policies of the rclone-colab application.">
-<link rel="stylesheet" href="style.css">
+<title>Alex Gromer - systems architect, DevOps/SRE</title>
+<meta name="description" content="Alex Gromer: systems architect, DevOps/SRE, security engineering and AI tooling. Projects, open-source work, home lab, and the policies of every repository and of the rclone-colab application.">
+<link rel="canonical" href="https://alexgromer.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alex Gromer">
+<meta property="og:title" content="Alex Gromer - systems architect, DevOps/SRE">
+<meta property="og:description" content="Infrastructure that stays up, and tooling that keeps engineers honest.">
+<meta property="og:url" content="https://alexgromer.github.io/">
+<meta property="og:image" content="https://alexgromer.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Alex Gromer: circuit traces and a gear on a dark blue background">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1b2d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/theme.js"></script>
+<script src="js/site.js" defer></script>
+<script src="js/stats.js" defer></script>
 </head>
-<body>
-<main>
-<h1>Alex Gromer</h1>
-<p class="muted">Systems architect, DevOps/SRE. Go, Rust, C. Infrastructure, security engineering and AI tooling.</p>
-<nav><a href="https://github.com/AlexGromer">GitHub</a><a href="rclone-colab.html">rclone-colab</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a></nav>
+<body id="top-of-page">
+<a class="skip" href="#main">Skip to content</a>
+<!-- gen:header:start -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/favicon.svg" alt="" width="32" height="32"><span>Alex Gromer</span></a>
+    <nav class="nav-wide" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#principles">Principles</a>
+        <a href="#stats">Stats</a>
+        <a href="#projects">Projects</a>
+        <a href="#oss">Open source</a>
+        <a href="#lab">Lab</a>
+        <a href="#policies">Policies</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <details class="nav-narrow">
+      <summary><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary>
+      <nav class="menu" aria-label="Sections, menu">
+          <a href="#about">About</a>
+          <a href="#principles">Principles</a>
+          <a href="#stats">Stats</a>
+          <a href="#projects">Projects</a>
+          <a href="#oss">Open source</a>
+          <a href="#lab">Lab</a>
+          <a href="#policies">Policies</a>
+          <a href="#contact">Contact</a>
+      </nav>
+    </details>
+    <button id="theme-toggle" class="theme-toggle" type="button" hidden aria-pressed="false" aria-label="Switch colour theme"><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.500A8 8 0 0 1 9.500 4 8 8 0 1 0 20 14.500z"/></svg><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
+  </div>
+</header>
+<!-- gen:header:end -->
+<main id="main">
 
-<h2 id="rclone-colab">rclone-colab</h2>
-<p><strong>rclone-colab</strong> is a personal, single-user application: an OAuth client that lets my own tooling
-(<a href="https://rclone.org/">rclone</a> running inside a Google Colab runtime or on my workstation) read and write files in
-<em>my own</em> Google Drive. It is used to keep model evaluation runs, checkpoints and logs in one Drive folder without
-granting access interactively on every runtime start.</p>
-<ul>
-  <li>Purpose: synchronise one Google Drive folder of the account owner with compute sessions the owner starts.</li>
-  <li>Users: the account owner only. The application is not offered to third parties.</li>
-  <li>Data: files in the owner's Google Drive, accessed under the <code>drive</code> scope, on the owner's instruction.</li>
-  <li>Policies: <a href="privacy.html">privacy policy</a>, <a href="terms.html">terms of service</a>.</li>
-</ul>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <svg class="hero-art" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <g class="traces">
+        <path class="trace" d="M0 120 H260 L300 160 V300 H520"/>
+        <path class="trace" d="M1200 80 H980 L940 120 V250 H760"/>
+        <path class="trace" d="M0 480 H180 L220 440 H420 V520 H640"/>
+        <path class="trace" d="M1200 540 H1060 L1020 500 V470 H900"/>
+        <path class="trace" d="M600 0 V90 L640 130 H760"/>
+        <path class="trace" d="M300 600 V540 L340 500 H520"/>
+      </g>
+      <g class="pulses">
+        <path class="pulse" d="M0 120 H260 L300 160 V300 H520"/>
+        <path class="pulse d1" d="M1200 80 H980 L940 120 V250 H760"/>
+        <path class="pulse d2" d="M0 480 H180 L220 440 H420 V520 H640"/>
+        <path class="pulse d3" d="M1200 540 H1060 L1020 500 V470 H900"/>
+        <path class="pulse d4" d="M600 0 V90 L640 130 H760"/>
+        <path class="pulse d5" d="M300 600 V540 L340 500 H520"/>
+      </g>
+      <g class="nodes">
+        <circle class="node" cx="520" cy="300" r="6"/><circle class="node" cx="760" cy="250" r="6"/><circle class="node" cx="640" cy="520" r="6"/>
+        <circle class="node" cx="900" cy="470" r="6"/><circle class="node" cx="760" cy="130" r="6"/><circle class="node" cx="520" cy="500" r="6"/>
+        <circle class="node" cx="0" cy="120" r="6"/><circle class="node" cx="1200" cy="80" r="6"/>
+      </g>
+      <path class="gear" fill-rule="evenodd" d="M1117.1 286.5 L1139.7 290.7 L1139.7 309.3 L1117.1 313.5 L1112.4 334.3 L1130.9 347.9 L1122.8 364.7 L1100.7 358.7 L1087.4 375.3 L1098.1 395.6 L1083.6 407.2 L1066.2 392.2 L1047.0 401.4 L1047.9 424.3 L1029.8 428.5 L1020.6 407.5 L999.4 407.5 L990.2 428.5 L972.1 424.3 L973.0 401.4 L953.8 392.2 L936.4 407.2 L921.9 395.6 L932.6 375.3 L919.3 358.7 L897.2 364.7 L889.1 347.9 L907.6 334.3 L902.9 313.5 L880.3 309.3 L880.3 290.7 L902.9 286.5 L907.6 265.7 L889.1 252.1 L897.2 235.3 L919.3 241.3 L932.6 224.7 L921.9 204.4 L936.4 192.8 L953.8 207.8 L973.0 198.6 L972.1 175.7 L990.2 171.5 L999.4 192.5 L1020.6 192.5 L1029.8 171.5 L1047.9 175.7 L1047.0 198.6 L1066.2 207.8 L1083.6 192.8 L1098.1 204.4 L1087.4 224.7 L1100.7 241.3 L1122.8 235.3 L1130.9 252.1 L1112.4 265.7Z M970.0 300.0 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0Z"/>
+      <path class="gear rev" fill-rule="evenodd" d="M939.5 417.5 L958.4 421.0 L958.4 441.0 L939.5 444.5 L931.3 464.2 L942.2 480.0 L928.0 494.2 L912.2 483.3 L892.5 491.5 L889.0 510.4 L869.0 510.4 L865.5 491.5 L845.8 483.3 L830.0 494.2 L815.8 480.0 L826.7 464.2 L818.5 444.5 L799.6 441.0 L799.6 421.0 L818.5 417.5 L826.7 397.8 L815.8 382.0 L830.0 367.8 L845.8 378.7 L865.5 370.5 L869.0 351.6 L889.0 351.6 L892.5 370.5 L912.2 378.7 L928.0 367.8 L942.2 382.0 L931.3 397.8Z M855.0 431.0 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0Z"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">AlexGromer on GitHub</p>
+      <h1 id="hero-title">Alex Gromer</h1>
+      <p class="role">Systems architect, DevOps/SRE, security engineering, AI tooling</p>
+      <p class="tagline">Infrastructure that stays up, and tooling that keeps engineers honest.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#projects">Projects</a>
+        <a class="btn btn-ghost" href="https://github.com/AlexGromer" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
 
-<h2>Projects</h2>
-<ul>
-  <li><a href="https://github.com/AlexGromer">Open-source work on GitHub</a>: infrastructure tooling, security automation, model evaluation pipelines.</li>
-</ul>
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap two-col">
+      <div class="reveal">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">Platforms where failure is expected and contained</h2>
+        <p>I design and run platforms where failure is expected and contained: Kubernetes delivery, identity and database migrations, air-gapped installs, and guard rails for AI coding agents.</p>
+        <p>Go, Rust and C for the parts that matter; Bash, Python and TypeScript where they fit.</p>
+      </div>
+      <div class="panel reveal">
+        <h3>Focus</h3>
+        <ul class="chips">
+          <li class="chip">Platform &amp; delivery</li>
+          <li class="chip">Identity &amp; migration</li>
+          <li class="chip">Security engineering</li>
+          <li class="chip">AI tooling</li>
+          <li class="chip">Home lab</li>
+        </ul>
+        <h3>Languages</h3>
+        <ul class="chips">
+          <li class="chip mono">Go</li><li class="chip mono">Rust</li><li class="chip mono">C</li>
+          <li class="chip mono">Bash</li><li class="chip mono">Python</li><li class="chip mono">TypeScript</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<footer>Contact: through <a href="https://github.com/AlexGromer">GitHub</a>.</footer>
+  <section class="section alt" id="principles" aria-labelledby="principles-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Principles</p>
+        <h2 id="principles-title">Three rules I keep coming back to</h2>
+      </div>
+      <ul class="cards c3">
+        <li class="card reveal"><h3><svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.500 3v5.500c0 4.500-3.200 8-7.500 9.500-4.300-1.500-7.500-5-7.500-9.500V6z"/><rect x="9" y="10.500" width="6" height="5" rx="1"/><path d="M10.200 10.500V9a1.800 1.800 0 0 1 3.600 0v1.500"/></svg>Fail closed</h3><p>When a guard cannot decide, it denies. Defaults deny, exceptions are explicit and logged, and a broken check never turns into a pass.</p></li>
+        <li class="card reveal"><h3><svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.500"/><path d="M3 12h5.500M15.500 12H21"/><path d="M17 4.500l1.500 1.500 3-3" /><path d="M5 19h6"/></svg>Reproducible</h3><p>Pinned sources, signed commits, deterministic output. If I cannot rebuild it from what is written down, I do not trust it.</p></li>
+        <li class="card reveal"><h3><svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 16l8-8M10 8h6v6"/></svg>Worse is better</h3><p>A small, simple thing that works today beats a complete one that ships never. Ship the part that holds, then iterate.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="stats" aria-labelledby="stats-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Stats</p>
+        <h2 id="stats-title">The public record, drawn from the GitHub API</h2>
+        <p class="lead">Languages by bytes, commits per month and a repository timeline. The data is a static file, rebuilt by a script; nothing is fetched from third parties.</p>
+        <p class="muted" id="stats-meta"></p>
+      </div>
+      <p id="stats-status" role="status" hidden></p>
+      <dl class="kpis reveal" aria-label="Key numbers">
+<!-- stats:kpi:start -->
+        <div class="kpi-tile"><dt>Repositories</dt><dd data-kpi="repositories">12</dd></div>
+        <div class="kpi-tile"><dt>Stars</dt><dd data-kpi="stars">5</dd></div>
+        <div class="kpi-tile"><dt>Merged PRs</dt><dd data-kpi="merged_prs">4</dd></div>
+        <div class="kpi-tile"><dt>Languages</dt><dd data-kpi="languages">11</dd></div>
+<!-- stats:kpi:end -->
+      </dl>
+      <figure class="chart reveal" aria-labelledby="cap-lang">
+        <figcaption id="cap-lang">Languages by bytes</figcaption>
+        <p class="sub">Summed over the public, non-fork repositories listed below.</p>
+        <div class="chart-body" data-chart="lang"></div>
+        <ul class="legend" data-legend="lang"></ul>
+        <details><summary>Data table</summary><div class="tbl-wrap" data-table="lang"></div></details>
+      </figure>
+      <figure class="chart reveal" aria-labelledby="cap-commits">
+        <figcaption id="cap-commits">Commits per month</figcaption>
+        <p class="sub">Last 12 months, commits authored by AlexGromer in those repositories.</p>
+        <div class="chart-body" data-chart="commits"></div>
+        <details><summary>Data table</summary><div class="tbl-wrap" data-table="commits"></div></details>
+      </figure>
+      <figure class="chart reveal" aria-labelledby="cap-timeline">
+        <figcaption id="cap-timeline">Repositories by creation date</figcaption>
+        <p class="sub">Oldest first; dot size grows with stars. Hover or focus a dot for details.</p>
+        <div class="chart-body" data-chart="timeline"></div>
+        <details><summary>Data table</summary><div class="tbl-wrap" data-table="repos"></div></details>
+      </figure>
+      <div class="stats-fallback">
+<!-- stats:noscript:start -->
+      <noscript>
+        <div class="tables">
+          <table><caption>Languages by bytes (generated 2026-10-30)</caption><thead><tr><th>Language</th><th>Share</th><th>Size</th></tr></thead><tbody><tr><td>Go</td><td>41.0%</td><td>5575.4 KiB</td></tr><tr><td>Python</td><td>36.7%</td><td>4994.7 KiB</td></tr><tr><td>Shell</td><td>15.1%</td><td>2058.6 KiB</td></tr><tr><td>JavaScript</td><td>3.4%</td><td>467.0 KiB</td></tr><tr><td>TypeScript</td><td>3.2%</td><td>440.7 KiB</td></tr><tr><td>HTML</td><td>0.3%</td><td>34.5 KiB</td></tr><tr><td>Dockerfile</td><td>0.1%</td><td>14.4 KiB</td></tr><tr><td>Other</td><td>0.1%</td><td>16.2 KiB</td></tr></tbody></table>
+          <table><caption>Commits per month</caption><thead><tr><th>Month</th><th>Commits</th></tr></thead><tbody><tr><td>2025-11</td><td>0</td></tr><tr><td>2025-12</td><td>0</td></tr><tr><td>2026-01</td><td>50</td></tr><tr><td>2026-02</td><td>35</td></tr><tr><td>2026-03</td><td>33</td></tr><tr><td>2026-04</td><td>3</td></tr><tr><td>2026-05</td><td>0</td></tr><tr><td>2026-06</td><td>142</td></tr><tr><td>2026-07</td><td>368</td></tr><tr><td>2026-08</td><td>160</td></tr><tr><td>2026-09</td><td>38</td></tr><tr><td>2026-10</td><td>7</td></tr></tbody></table>
+          <table><caption>Repositories by creation date</caption><thead><tr><th>Created</th><th>Repository</th><th>Language</th><th>Stars</th></tr></thead><tbody><tr><td>2021-06-25</td><td>elasticsearch-analysis-morphology-prebuilt-plugin</td><td>n/a</td><td>0</td></tr><tr><td>2026-01-22</td><td>ssh-yaml-validator</td><td>Shell</td><td>0</td></tr><tr><td>2026-01-25</td><td>jwt-parser</td><td>Shell</td><td>0</td></tr><tr><td>2026-01-29</td><td>keycloak-migration</td><td>Shell</td><td>1</td></tr><tr><td>2026-02-19</td><td>deckhouse-helm-generator</td><td>Go</td><td>0</td></tr><tr><td>2026-04-04</td><td>ACEV-Framework</td><td>JavaScript</td><td>0</td></tr><tr><td>2026-06-25</td><td>claude-code-operator-framework</td><td>Python</td><td>0</td></tr><tr><td>2026-06-25</td><td>rlm</td><td>Python</td><td>0</td></tr><tr><td>2026-06-25</td><td>sentinel</td><td>Python</td><td>4</td></tr><tr><td>2026-06-28</td><td>uka-runner-bootstrap</td><td>Shell</td><td>0</td></tr><tr><td>2026-10-27</td><td>dead-code-checker</td><td>n/a</td><td>0</td></tr><tr><td>2026-10-29</td><td>vot-local</td><td>TypeScript</td><td>0</td></tr></tbody></table>
+        </div>
+      </noscript>
+      <!-- stats:noscript:end -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="projects" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Projects</p>
+        <h2 id="projects-title">Selected work</h2>
+        <p class="lead">Five repositories I would show first.</p>
+      </div>
+      <ul class="cards c3">
+        <li class="card reveal">
+          <h3><a class="stretch" href="https://github.com/AlexGromer/sentinel" rel="noopener">sentinel</a></h3>
+          <p class="meta"><span data-repo-lang="sentinel"><i class="dot c1"></i><span class="lbl">Python</span></span><span class="stars" data-repo-stars="sentinel">&#9733; 4</span></p>
+          <p>Self-healing UI-testing agent: explores a web app, freezes a replayable plan, repairs locators on DOM drift.</p>
+          <span class="more-link" aria-hidden="true">View on GitHub &rarr;</span>
+        </li>
+        <li class="card reveal">
+          <h3><a class="stretch" href="https://github.com/AlexGromer/deckhouse-helm-generator" rel="noopener">deckhouse-helm-generator</a></h3>
+          <p class="meta"><span data-repo-lang="deckhouse-helm-generator"><i class="dot c0"></i><span class="lbl">Go</span></span><span class="stars" data-repo-stars="deckhouse-helm-generator">&#9733; 0</span></p>
+          <p>Turns live Kubernetes resources into Helm charts, with relationship detection for CRDs, Prometheus Operator, Gateway API, KEDA, cert-manager and Argo Rollouts.</p>
+          <span class="more-link" aria-hidden="true">View on GitHub &rarr;</span>
+        </li>
+        <li class="card reveal">
+          <h3><a class="stretch" href="https://github.com/AlexGromer/keycloak-migration" rel="noopener">keycloak-migration</a></h3>
+          <p class="meta"><span data-repo-lang="keycloak-migration"><i class="dot c2"></i><span class="lbl">Shell</span></span><span class="stars" data-repo-stars="keycloak-migration">&#9733; 1</span></p>
+          <p>Multi-DBMS, multi-deployment Keycloak migration framework: auto-discovery, atomic checkpoints, air-gap support.</p>
+          <span class="more-link" aria-hidden="true">View on GitHub &rarr;</span>
+        </li>
+        <li class="card reveal">
+          <h3><a class="stretch" href="https://github.com/AlexGromer/jwt-parser" rel="noopener">jwt-parser</a></h3>
+          <p class="meta"><span data-repo-lang="jwt-parser"><i class="dot c2"></i><span class="lbl">Shell</span></span><span class="stars" data-repo-stars="jwt-parser">&#9733; 0</span></p>
+          <p>JWT parser with zero dependencies for closed networks; 131 tests. Bash and Go.</p>
+          <span class="more-link" aria-hidden="true">View on GitHub &rarr;</span>
+        </li>
+        <li class="card reveal">
+          <h3><a class="stretch" href="https://github.com/AlexGromer/ssh-yaml-validator" rel="noopener">ssh-yaml-validator</a></h3>
+          <p class="meta"><span data-repo-lang="ssh-yaml-validator"><i class="dot c2"></i><span class="lbl">Shell</span></span><span class="stars" data-repo-stars="ssh-yaml-validator">&#9733; 0</span></p>
+          <p>YAML validator for air-gapped hosts. Pure Bash.</p>
+          <span class="more-link" aria-hidden="true">View on GitHub &rarr;</span>
+        </li>
+      </ul>
+      <details class="more reveal">
+        <summary>More repositories (7)</summary>
+        <ul>
+          <li><strong><a href="https://github.com/AlexGromer/claude-code-operator-framework" rel="noopener">claude-code-operator-framework</a></strong><span class="muted">Model-agnostic Claude Code configuration: output styles, rules, agents, hooks, MCP servers.</span></li>
+          <li><strong><a href="https://github.com/AlexGromer/dead-code-checker" rel="noopener">dead-code-checker</a></strong><span class="muted">Dead-code detection with a public-API mode and an LLM second opinion.</span></li>
+          <li><strong><a href="https://github.com/AlexGromer/vot-local" rel="noopener">vot-local</a></strong><span class="muted">Voice-over translation of local video files into a dubbed .mkv.</span></li>
+          <li><strong><a href="https://github.com/AlexGromer/rlm" rel="noopener">rlm</a></strong><span class="muted">Recursive Language Model methods.</span></li>
+          <li><strong><a href="https://github.com/AlexGromer/ACEV-Framework" rel="noopener">ACEV-Framework</a></strong><span class="muted">Knowledge-base framework (Second Brain and Zettelkasten).</span></li>
+          <li><strong><a href="https://github.com/AlexGromer/uka-runner-bootstrap" rel="noopener">uka-runner-bootstrap</a></strong><span class="muted">Bootstrap of a self-hosted GitHub Actions runner in WSL2; no secrets, the registration token is passed at runtime.</span></li>
+          <li><strong><a href="https://github.com/AlexGromer/elasticsearch-analysis-morphology-prebuilt-plugin" rel="noopener">elasticsearch-analysis-morphology-prebuilt-plugin</a></strong><span class="muted">Prebuilt morphology analysis plugin for Elasticsearch.</span></li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="oss" aria-labelledby="oss-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Open source</p>
+        <h2 id="oss-title">Upstream contributions</h2>
+        <p class="lead">Small, focused changes sent to other people's projects. Status as of 30 October 2026.</p>
+      </div>
+      <ul class="oss">
+        <li class="reveal">
+          <div><strong><a href="https://github.com/FOSWLY/vot.js/pull/143" rel="noopener">FOSWLY/vot.js #143</a></strong><p class="what">Add edX support to the extension layer.</p></div>
+          <span class="badge merged"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="3.500" r="1.600"/><circle cx="4" cy="12.500" r="1.600"/><circle cx="12" cy="9" r="1.600"/><path d="M4 5.100v5.800M4 7c0 2 2 2 6.400 2"/></svg>Merged</span>
+        </li>
+        <li class="reveal">
+          <div><strong><a href="https://github.com/FOSWLY/vot.js/pull/144" rel="noopener">FOSWLY/vot.js #144</a></strong><p class="what">Make the media proxy host configurable.</p></div>
+          <span class="badge merged"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="3.500" r="1.600"/><circle cx="4" cy="12.500" r="1.600"/><circle cx="12" cy="9" r="1.600"/><path d="M4 5.100v5.800M4 7c0 2 2 2 6.400 2"/></svg>Merged</span>
+        </li>
+        <li class="reveal">
+          <div><strong><a href="https://github.com/ilyhalight/voice-over-translation/pull/1894" rel="noopener">ilyhalight/voice-over-translation #1894</a></strong><p class="what">Make the media proxy host configurable.</p></div>
+          <span class="badge merged"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="3.500" r="1.600"/><circle cx="4" cy="12.500" r="1.600"/><circle cx="12" cy="9" r="1.600"/><path d="M4 5.100v5.800M4 7c0 2 2 2 6.400 2"/></svg>Merged</span>
+        </li>
+        <li class="reveal">
+          <div><strong><a href="https://github.com/ilyhalight/voice-over-translation/pull/1881" rel="noopener">ilyhalight/voice-over-translation #1881</a></strong><p class="what">Make the repository checks and tests pass on master.</p></div>
+          <span class="badge merged"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="3.500" r="1.600"/><circle cx="4" cy="12.500" r="1.600"/><circle cx="12" cy="9" r="1.600"/><path d="M4 5.100v5.800M4 7c0 2 2 2 6.400 2"/></svg>Merged</span>
+        </li>
+        <li class="reveal">
+          <div><strong><a href="https://github.com/FOSWLY/media-proxy/pull/115" rel="noopener">FOSWLY/media-proxy #115</a></strong><p class="what">Accept a generic binary content type for the video proxy.</p></div>
+          <span class="badge open"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="4" cy="3.500" r="1.600"/><circle cx="4" cy="12.500" r="1.600"/><circle cx="12" cy="12.500" r="1.600"/><path d="M4 5.100v5.800M12 10.900V6.500a2 2 0 0 0-2-2H8.500"/></svg>Open</span>
+        </li>
+        <li class="reveal">
+          <div><strong><a href="https://github.com/anthropics/claude-code/issues/104986" rel="noopener">anthropics/claude-code #104986</a></strong><p class="what">Bug report: a background subagent is terminated at its first Bash call, yet the result is reported as success.</p></div>
+          <span class="badge reported"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 4.800V8.500M8 11.200h.01"/></svg>Reported</span>
+        </li>
+        <li class="reveal">
+          <div><strong><a href="https://github.com/AlexGromer/heretic" rel="noopener">AlexGromer/heretic</a></strong>
+            <p class="what">Fork of p-e-w/heretic with three pull-request branches: fused MoE experts, FP8 checkpoint loading, ARA on flattened I/O.</p></div>
+          <span class="badge prep"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 4.500V8l2.500 1.500"/></svg>In preparation</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section alt" id="lab" aria-labelledby="lab-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Home lab</p>
+        <h2 id="lab-title">Private infrastructure at home</h2>
+        <p class="lead">A home lab for private workloads and for trying things out before they matter.</p>
+      </div>
+      <ul class="lab">
+        <li class="reveal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1.500"/><rect x="3" y="11" width="18" height="5" rx="1.500"/><path d="M7 6.500h.01M7 13.500h.01M3 20h18"/></svg><strong>Proxmox</strong><span>Virtual machines and containers</span></li>
+        <li class="reveal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.700 3.600 3 8 3s8-1.300 8-3V6M4 12v6c0 1.700 3.600 3 8 3s8-1.300 8-3v-6"/></svg><strong>Ceph</strong><span>Replicated storage under the cluster</span></li>
+        <li class="reveal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.500l8.200 4.750v9.500L12 21.500l-8.200-4.750v-9.500z"/><circle cx="12" cy="12" r="3"/><path d="M12 9V4.500M12 15v4.500M9.400 10.500L5.500 8.300M14.600 13.500l3.900 2.200M9.400 13.500l-3.900 2.200M14.600 10.500l3.900-2.200"/></svg><strong>K3s</strong><span>Lightweight Kubernetes</span></li>
+        <li class="reveal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-4.500L4 9M4 4v5h5M4 13a8 8 0 0 0 14 4.500L20 15M20 20v-5h-5"/></svg><strong>ArgoCD</strong><span>GitOps: Git is the source of truth</span></li>
+        <li class="reveal"><svg class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.500" y="9.500" width="5" height="5" rx="1"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg><strong>Local AI server</strong><span>Private workloads, local model evaluation</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="policies" aria-labelledby="policies-title">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Policies</p>
+        <h2 id="policies-title">How my repositories are run</h2>
+        <p class="lead">Written in plain language and applied to every repository under AlexGromer unless a repository says otherwise.</p>
+      </div>
+      <ul class="cards c3">
+        <li class="card policy-card reveal">
+          <h3><a href="security.html">Security policy</a></h3>
+          <p>Scope, private advisories, response targets and safe harbour.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="contributing.html">Contributing</a></h3>
+          <p>Issues, small focused pull requests, signed commits, review expectations.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="conduct.html">Code of conduct</a></h3>
+          <p>Short, enforceable, reported through GitHub.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="support.html">Support and maintenance</a></h3>
+          <p>Best effort, no SLA, latest release supported, deprecation notice.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="licence.html">Licence</a></h3>
+          <p>MIT for the site source.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="privacy-site.html">Privacy of this site</a></h3>
+          <p>It collects nothing: no analytics, no cookies.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="rclone-colab.html">rclone-colab</a></h3>
+          <p>A personal, single-user OAuth client for the owner's own Drive.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="privacy.html">rclone-colab privacy policy</a></h3>
+          <p>What the application accesses and how tokens are kept.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+        <li class="card policy-card reveal">
+          <h3><a href="terms.html">rclone-colab terms</a></h3>
+          <p>Scope, use, no warranty.</p>
+          <time datetime="2026-10-30">30 October 2026</time>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section alt" id="contact" aria-labelledby="contact-title">
+    <div class="wrap two-col">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Find me on GitHub</h2>
+        <p>Everything goes through GitHub, in the open or privately, as fits the topic. There is no email or phone number on this site.</p>
+      </div>
+      <div class="panel reveal">
+        <ul class="contact-list">
+          <li><a href="https://github.com/AlexGromer" rel="noopener">GitHub profile: AlexGromer</a></li>
+          <li><a href="https://github.com/AlexGromer/alexgromer.github.io/issues" rel="noopener">Open an issue about this site</a></li>
+          <li><a href="https://github.com/AlexGromer/alexgromer.github.io/security/advisories/new" rel="noopener">Report a vulnerability privately</a></li>
+        </ul>
+        <p class="muted">Security reports: read the <a href="security.html">security policy</a> first.</p>
+      </div>
+    </div>
+  </section>
+
 </main>
+<!-- gen:footer:start -->
+<footer class="site-footer">
+  <div class="wrap">
+    <ul class="links">
+      <li><a href="security.html">Security</a></li>
+      <li><a href="contributing.html">Contributing</a></li>
+      <li><a href="conduct.html">Conduct</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="licence.html">Licence</a></li>
+      <li><a href="privacy-site.html">Site privacy</a></li>
+      <li><a href="rclone-colab.html">rclone-colab</a></li>
+      <li><a href="privacy.html">rclone-colab privacy</a></li>
+      <li><a href="terms.html">rclone-colab terms</a></li>
+    </ul>
+    <p>&copy; 2026 Alex Gromer. Site source under the <a href="licence.html">MIT licence</a>. <a href="https://github.com/AlexGromer/alexgromer.github.io" rel="noopener">Source on GitHub</a>.</p>
+    <p class="note">No analytics. No cookies. Static files.</p>
+  </div>
+</footer>
+<!-- gen:footer:end -->
 </body>
 </html>
