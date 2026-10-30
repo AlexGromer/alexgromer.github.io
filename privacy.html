@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — rclone-colab</title>
+<meta name="description" content="Privacy policy of the rclone-colab application by Alex Gromer.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Privacy policy</h1>
+<p class="muted">Application: <strong>rclone-colab</strong>. Developer: Alex Gromer. Effective date: 30 October 2026.</p>
+<nav><a href="index.html">Home</a><a href="terms.html">Terms of service</a></nav>
+
+<h2>1. What the application is</h2>
+<p>rclone-colab is a personal OAuth client used by the developer's own instance of rclone to access the developer's own Google Drive
+from compute sessions the developer starts (for example Google Colab runtimes). It is a single-user tool: the only Google account
+that authorises it is the developer's account. It is not distributed to, and must not be used by, other people.</p>
+
+<h2>2. Data the application accesses</h2>
+<ul>
+  <li><strong>Google Drive files.</strong> With the <code>https://www.googleapis.com/auth/drive</code> scope the application can list,
+  read, create, update and delete files in the authorising account's Google Drive. In practice it works inside one folder chosen by the
+  developer (model evaluation runs, checkpoints, logs, result summaries).</li>
+  <li><strong>OAuth tokens.</strong> The access and refresh tokens issued by Google are stored only in places controlled by the developer:
+  a password manager on the developer's workstation and the Secrets store of the developer's Google Colab account. They are never written
+  into notebooks, repositories, logs or shared files.</li>
+  <li><strong>Basic account information</strong> that Google returns as part of the OAuth flow (account identifier). Nothing else is requested.</li>
+</ul>
+
+<h2>3. How the data is used</h2>
+<p>Drive data is used exclusively to synchronise files between the developer's Drive folder and the developer's compute sessions.
+No data is analysed for advertising, profiling or any purpose other than the file transfer the developer requests.</p>
+
+<h2>4. Sharing and third parties</h2>
+<p>No Google user data is sold, shared, transferred or disclosed to any third party. No third-party services receive the data.
+The application does not use Google user data to develop, improve or train machine-learning models, and does not transfer
+Google user data to any AI model.</p>
+
+<h2>5. Storage and retention</h2>
+<p>The application itself stores nothing except the OAuth tokens described above. Files remain in the developer's Google Drive and on the
+compute sessions for as long as the developer keeps them; the developer can delete them at any time through Google Drive.
+Tokens can be revoked at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>,
+which immediately ends all access.</p>
+
+<h2>6. Security</h2>
+<p>Tokens are kept in encrypted stores (a password manager and Colab Secrets) with access limited to the developer's accounts. Transfers
+use HTTPS to Google's APIs only.</p>
+
+<h2>7. Google API Services User Data Policy</h2>
+<p>The application's use of information received from Google APIs adheres to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements.</p>
+
+<h2>8. Changes and contact</h2>
+<p>Changes to this policy are published on this page with a new effective date. Questions: through
+<a href="https://github.com/AlexGromer">GitHub</a>.</p>
+
+<footer><a href="index.html">Alex Gromer</a> · <a href="terms.html">Terms of service</a></footer>
+</main>
+</body>
+</html>
