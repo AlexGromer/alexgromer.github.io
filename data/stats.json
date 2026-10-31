@@ -49,7 +49,7 @@
       "month": "2026-10"
     }
   ],
-  "generated_at": "2026-10-30",
+  "generated_at": "2026-10-31",
   "kpi": {
     "languages": 11,
     "merged_prs": 4,
@@ -160,7 +160,7 @@
       "created": "2026-06-25",
       "language": "Python",
       "name": "sentinel",
-      "pushed": "2026-10-30",
+      "pushed": "2026-10-31",
       "stars": 4
     },
     {
