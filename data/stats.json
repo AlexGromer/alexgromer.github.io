@@ -49,7 +49,7 @@
       "month": "2026-11"
     }
   ],
-  "generated_at": "2026-11-03",
+  "generated_at": "2026-11-04",
   "kpi": {
     "languages": 11,
     "merged_prs": 4,
@@ -58,19 +58,19 @@
   },
   "languages": [
     {
-      "bytes": 6166160,
+      "bytes": 6444801,
       "name": "Go",
-      "percent": 42.9
+      "percent": 44.0
     },
     {
       "bytes": 5114602,
       "name": "Python",
-      "percent": 35.6
+      "percent": 34.9
     },
     {
       "bytes": 2108022,
       "name": "Shell",
-      "percent": 14.7
+      "percent": 14.4
     },
     {
       "bytes": 478191,
@@ -160,7 +160,7 @@
       "created": "2026-06-25",
       "language": "Python",
       "name": "sentinel",
-      "pushed": "2026-11-02",
+      "pushed": "2026-11-04",
       "stars": 4
     },
     {
