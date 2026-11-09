@@ -49,7 +49,7 @@
       "month": "2026-11"
     }
   ],
-  "generated_at": "2026-11-07",
+  "generated_at": "2026-11-09",
   "kpi": {
     "languages": 11,
     "merged_prs": 4,
@@ -132,7 +132,7 @@
       "created": "2026-02-19",
       "language": "Go",
       "name": "deckhouse-helm-generator",
-      "pushed": "2026-11-03",
+      "pushed": "2026-11-09",
       "stars": 0
     },
     {
