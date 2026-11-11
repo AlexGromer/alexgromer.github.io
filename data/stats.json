@@ -45,11 +45,11 @@
       "month": "2026-10"
     },
     {
-      "count": 0,
+      "count": 18,
       "month": "2026-11"
     }
   ],
-  "generated_at": "2026-11-10",
+  "generated_at": "2026-11-11",
   "kpi": {
     "languages": 11,
     "merged_prs": 4,
@@ -60,27 +60,27 @@
     {
       "bytes": 6444801,
       "name": "Go",
-      "percent": 44.0
+      "percent": 43.2
     },
     {
-      "bytes": 5114602,
+      "bytes": 5366852,
       "name": "Python",
-      "percent": 34.9
+      "percent": 36.0
     },
     {
       "bytes": 2108022,
       "name": "Shell",
-      "percent": 14.4
+      "percent": 14.1
     },
     {
       "bytes": 478191,
       "name": "JavaScript",
-      "percent": 3.3
+      "percent": 3.2
     },
     {
       "bytes": 451281,
       "name": "TypeScript",
-      "percent": 3.1
+      "percent": 3.0
     },
     {
       "bytes": 35367,
@@ -111,21 +111,21 @@
       "created": "2026-01-22",
       "language": "Shell",
       "name": "ssh-yaml-validator",
-      "pushed": "2026-01-30",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
       "created": "2026-01-25",
       "language": "Shell",
       "name": "jwt-parser",
-      "pushed": "2026-01-25",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
       "created": "2026-01-29",
       "language": "Shell",
       "name": "keycloak-migration",
-      "pushed": "2026-08-11",
+      "pushed": "2026-11-10",
       "stars": 1
     },
     {
@@ -139,21 +139,21 @@
       "created": "2026-04-04",
       "language": "JavaScript",
       "name": "ACEV-Framework",
-      "pushed": "2026-04-04",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
       "created": "2026-06-25",
       "language": "Python",
       "name": "claude-code-operator-framework",
-      "pushed": "2026-06-25",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
       "created": "2026-06-25",
       "language": "Python",
       "name": "rlm",
-      "pushed": "2026-07-20",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
@@ -167,21 +167,21 @@
       "created": "2026-06-28",
       "language": "Shell",
       "name": "uka-runner-bootstrap",
-      "pushed": "2026-06-28",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
       "created": "2026-10-27",
-      "language": "",
+      "language": "Python",
       "name": "dead-code-checker",
-      "pushed": "2026-10-27",
+      "pushed": "2026-11-10",
       "stars": 0
     },
     {
       "created": "2026-10-29",
       "language": "TypeScript",
       "name": "vot-local",
-      "pushed": "2026-10-30",
+      "pushed": "2026-11-10",
       "stars": 0
     }
   ]
