@@ -45,57 +45,57 @@
       "month": "2026-10"
     },
     {
-      "count": 18,
+      "count": 20,
       "month": "2026-11"
     }
   ],
-  "generated_at": "2026-11-13",
+  "generated_at": "2026-11-14",
   "kpi": {
-    "languages": 11,
+    "languages": 14,
     "merged_prs": 4,
     "repos": 12,
     "stars": 5
   },
   "languages": [
     {
-      "bytes": 6444801,
-      "name": "Go",
-      "percent": 43.2
+      "bytes": 8687906,
+      "name": "Python",
+      "percent": 46.9
     },
     {
-      "bytes": 5366852,
-      "name": "Python",
-      "percent": 36.0
+      "bytes": 6444801,
+      "name": "Go",
+      "percent": 34.8
     },
     {
       "bytes": 2108022,
       "name": "Shell",
-      "percent": 14.1
+      "percent": 11.4
     },
     {
-      "bytes": 478191,
+      "bytes": 616390,
       "name": "JavaScript",
-      "percent": 3.2
+      "percent": 3.3
     },
     {
       "bytes": 451281,
       "name": "TypeScript",
-      "percent": 3.0
+      "percent": 2.4
     },
     {
-      "bytes": 35367,
+      "bytes": 113458,
+      "name": "Tree-sitter Query",
+      "percent": 0.6
+    },
+    {
+      "bytes": 41156,
       "name": "HTML",
       "percent": 0.2
     },
     {
-      "bytes": 14706,
-      "name": "Dockerfile",
-      "percent": 0.1
-    },
-    {
-      "bytes": 16613,
+      "bytes": 50311,
       "name": "Other",
-      "percent": 0.1
+      "percent": 0.3
     }
   ],
   "login": "AlexGromer",
@@ -160,7 +160,7 @@
       "created": "2026-06-25",
       "language": "Python",
       "name": "sentinel",
-      "pushed": "2026-11-13",
+      "pushed": "2026-11-14",
       "stars": 4
     },
     {
@@ -174,7 +174,7 @@
       "created": "2026-10-27",
       "language": "Python",
       "name": "dead-code-checker",
-      "pushed": "2026-11-10",
+      "pushed": "2026-11-14",
       "stars": 0
     },
     {
