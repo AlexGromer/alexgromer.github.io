@@ -45,11 +45,11 @@
       "month": "2026-10"
     },
     {
-      "count": 20,
+      "count": 21,
       "month": "2026-11"
     }
   ],
-  "generated_at": "2026-11-14",
+  "generated_at": "2026-11-15",
   "kpi": {
     "languages": 14,
     "merged_prs": 4,
@@ -58,24 +58,24 @@
   },
   "languages": [
     {
-      "bytes": 8687906,
+      "bytes": 9324108,
       "name": "Python",
-      "percent": 46.9
+      "percent": 48.7
     },
     {
       "bytes": 6444801,
       "name": "Go",
-      "percent": 34.8
+      "percent": 33.6
     },
     {
       "bytes": 2108022,
       "name": "Shell",
-      "percent": 11.4
+      "percent": 11.0
     },
     {
-      "bytes": 616390,
+      "bytes": 619053,
       "name": "JavaScript",
-      "percent": 3.3
+      "percent": 3.2
     },
     {
       "bytes": 451281,
@@ -83,12 +83,12 @@
       "percent": 2.4
     },
     {
-      "bytes": 113458,
+      "bytes": 119711,
       "name": "Tree-sitter Query",
       "percent": 0.6
     },
     {
-      "bytes": 41156,
+      "bytes": 41301,
       "name": "HTML",
       "percent": 0.2
     },
